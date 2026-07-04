@@ -138,7 +138,7 @@ data MYLIB.calculated;
     format delivery_days speedfmt.;
 run;
 
-%macro summarize(min_value=200, state=ALL);
+%macro summarize(min_value=0, state=ALL);
 
     data MYLIB.final_data;
         set MYLIB.calculated;
@@ -272,3 +272,5 @@ proc sgplot data=MYLIB.final_data;
 
 ods listing close;
 ods graphics off;
+
+
